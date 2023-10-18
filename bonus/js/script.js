@@ -14,17 +14,12 @@
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
 const startBtn = document.querySelector('button');
-const difficulty1 = document.getElementById('difficulty-1');
-const difficulty2 = document.getElementById('difficulty-2');
-const difficulty3 = document.getElementById('difficulty-3');
+const numTotalSquare = document.getElementById('difficulty').value;
 
-difficulty1.addEventListener('click', firstDifficulty());
-difficulty2.addEventListener('click', secondDifficulty());
-
-
-function firstDifficulty(){
+numTotalSquare.addEventListener('change', function(){
+    
     startBtn.addEventListener('click', function(){
-        const totalSquare = 100;
+        const totalSquare = numTotalSquare;
         const playground = document.getElementById('playground');
         playground.innerHTML = '';
         for(let i = 0; i < totalSquare; i++){
@@ -32,7 +27,6 @@ function firstDifficulty(){
             playground.append(square);
         }
     });
-    
     function appearSquare(squareNum, totalSquare){
         const squareWidth = Math.sqrt(totalSquare)
         const square = document.createElement('div');
@@ -47,31 +41,7 @@ function firstDifficulty(){
         })
         return square;
     }
-}
+})
 
-function secondDifficulty(){
-    startBtn.addEventListener('click', function(){
-        const totalSquare = 81;
-        const playground = document.getElementById('playground');
-        playground.innerHTML = '';
-        for(let i = 0; i < totalSquare; i++){
-            let square = appearSquare(i, totalSquare);
-            playground.append(square);
-        }
-    });
-    
-    function appearSquare(squareNum, totalSquare){
-        const squareWidth = Math.sqrt(totalSquare)
-        const square = document.createElement('div');
-        square.classList.add('square');
-        square.style.width = `calc(100% / ${squareWidth})`;
-        square.style.height = square.style.width;
-        square.innerHTML = squareNum + 1;
-        square.addEventListener('click', function(){
-            square.classList.add('square-bg');
-            square.style.color = 'black';
-            console.log(this.innerHTML);
-        })
-        return square;
-    }
-}
+
+
