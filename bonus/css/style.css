@@ -23,3 +23,9 @@ button {
 .square-bg {
     background-color: lightblue;
 }
+
+#difficulty {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1em;
+}
