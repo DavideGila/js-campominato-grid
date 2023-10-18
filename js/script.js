@@ -17,7 +17,8 @@ const startBtn = document.querySelector('button');
 
 startBtn.addEventListener('click', function(){
     const totalSquare = 100;
-    const playground =document.getElementById('playground');
+    const playground = document.getElementById('playground');
+    playground.innerHTML = '';
     for(let i = 0; i < totalSquare; i++){
         let square = appearSquare(i, totalSquare);
         playground.append(square);
@@ -33,6 +34,7 @@ function appearSquare(squareNum, totalSquare){
     square.innerHTML = squareNum + 1;
     square.addEventListener('click', function(){
         square.classList.add('square-bg');
+        square.style.color = 'black';
     })
     return square;
 }
