@@ -19,14 +19,17 @@ startBtn.addEventListener('click', function(){
     const totalSquare = 100;
     const playground =document.getElementById('playground');
     for(let i = 0; i < totalSquare; i++){
-        let square = appearSquare(i);
+        let square = appearSquare(i, totalSquare);
         playground.append(square);
     }
 });
 
-function appearSquare(squareNum){
+function appearSquare(squareNum, totalSquare){
+    const squareWidth = Math.sqrt(totalSquare)
     const square = document.createElement('div');
     square.classList.add('square');
+    square.style.width = `calc(100% / ${squareWidth})`;
+    square.style.height = square.style.width;
     square.innerHTML = squareNum + 1;
     square.addEventListener('click', function(){
         square.classList.add('square-bg');
