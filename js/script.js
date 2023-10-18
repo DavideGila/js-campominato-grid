@@ -16,7 +16,10 @@
 const startBtn = document.querySelector('button');
 
 startBtn.addEventListener('click', function(){
-
+    const totalSquare = 100;
+    for(let i = 0; i < totalSquare; i++){
+        let square = appearSquare();
+    }
 });
 
 function appearSquare(){
@@ -25,4 +28,5 @@ function appearSquare(){
     square.addEventListener('click', function(){
         square.classList.add('square-bg');
     })
+    return square;
 }
