@@ -17,14 +17,17 @@ const startBtn = document.querySelector('button');
 
 startBtn.addEventListener('click', function(){
     const totalSquare = 100;
+    const playground =document.getElementById('playground');
     for(let i = 0; i < totalSquare; i++){
-        let square = appearSquare();
+        let square = appearSquare(i);
+        playground.append(square);
     }
 });
 
-function appearSquare(){
+function appearSquare(squareNum){
     const square = document.createElement('div');
     square.classList.add('square');
+    square.innerHTML = squareNum + 1;
     square.addEventListener('click', function(){
         square.classList.add('square-bg');
     })
