@@ -35,7 +35,7 @@ function appearSquare(squareNum, totalSquare){
     square.addEventListener('click', function(){
         square.classList.add('square-bg');
         square.style.color = 'black';
-        console.log(squareNum);
+        console.log(this.innerHTML);
     })
     return square;
 }
