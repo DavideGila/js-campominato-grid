@@ -3,9 +3,19 @@
     height: 700px;
     background-color: black;
     margin: 30px auto;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 button {
     margin: 0 auto;
     display: block;
+}
+
+.square {
+    border: 2px solid white;
+}
+
+.square-bg {
+    background-color: lightblue;
 }
